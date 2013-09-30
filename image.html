@@ -1,14 +1,8 @@
-<header role='banner'>
-  <input type='url' placeholder='image url' ng-model='imageUrl'>
-  <input type='text' placeholder='first line' ng-model='firstLine'>
-  <input type='text' placeholder='second line' ng-model='secondLine'>
-</header>
-
 <h1>image</h1>
 
 <div id='meme-area'>
   <div id='meme-frame'>
-    <img src='{{imageUrl}}' alt='{{firstLine}} {{secondLine}}'>
+    <img ng-src='{{imageUrl}}' alt='{{firstLine}} {{secondLine}}'>
     <p id='first-line'>
       {{firstLine}}
     </p>
@@ -20,4 +14,6 @@
 
 <form id='share'>
   <button ng-click='createLink()'>Share this meme!</button>
+  <button ng-click='remix()'>Remix!</button>
+  <a href='/'>Create your own!</a>
 </form>
