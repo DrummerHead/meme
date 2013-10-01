@@ -43,7 +43,6 @@ function mainController($scope, $route, $routeParams, $location, Toma){
   $scope.$route = $route;
   $scope.$location = $location;
   $scope.$routeParams = $routeParams;
-  Toma.getMemeData();
 }
 
 function rootController($scope, $route, $routeParams, $location, Toma){

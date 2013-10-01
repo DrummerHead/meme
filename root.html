@@ -4,8 +4,6 @@
   <input type='text' placeholder='second line' ng-model='secondLine'>
 </header>
 
-<h1>root</h1>
-
 <div id='meme-area'>
   <div id='meme-frame'>
     <img ng-src='{{imageUrl}}' alt='{{firstLine}} {{secondLine}}'>
@@ -20,5 +18,5 @@
 
 <form id='share'>
   <button ng-click='createLink()'>Share this meme!</button>
-  <input type='text' ng-model='lincoln'>
+  <input type='text' ng-model='lincoln' ng-show='lincoln'>
 </form>
