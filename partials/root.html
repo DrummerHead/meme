@@ -1,0 +1,13 @@
+<header role='banner'>
+  <input type='url' placeholder='image url' ng-model='imageUrl'>
+  <input type='text' placeholder='first line' ng-model='firstLine'>
+  <input type='text' placeholder='second line' ng-model='secondLine'>
+</header>
+
+<div id='meme-area' ng-include='"/partials/meme-area.html"' ng-style='memeAreaHeight()'>
+</div>
+
+<form id='share'>
+  <button ng-click='createLink()'>Share this meme!</button>
+  <input type='text' ng-model='lincoln' ng-show='lincoln'>
+</form>

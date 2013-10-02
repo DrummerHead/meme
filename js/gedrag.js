@@ -4,11 +4,11 @@ var ngMeme = angular.module('ngMeme', [])
 
 ngMeme.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
     $routeProvider.when('/', {
-      templateUrl: 'root.html',
+      templateUrl: '/partials/root.html',
       controller: rootController
     });
     $routeProvider.when('/:img', {
-      templateUrl: 'image.html',
+      templateUrl: '/partials/image.html',
       controller: imageController
     });
     $routeProvider.otherwise({ // Quite useless, I'll leave it for reference
@@ -43,6 +43,14 @@ function mainController($scope, $route, $routeParams, $location, Toma){
   $scope.$route = $route;
   $scope.$location = $location;
   $scope.$routeParams = $routeParams;
+
+  $scope.memeAreaHeight = function (){
+    var windowHeight = window.innerHeight;
+    var memeChrome = 108;
+    var areaHeight = (windowHeight - memeChrome) + 'px';
+    console.log(areaHeight);
+    return {'height' : areaHeight};
+  }
 }
 
 function rootController($scope, $route, $routeParams, $location, Toma){
@@ -54,6 +62,7 @@ function rootController($scope, $route, $routeParams, $location, Toma){
   $scope.imageUrl = lasCosas.imageUrl;
   $scope.firstLine = lasCosas.firstLine;
   $scope.secondLine = lasCosas.secondLine;
+
 }
 
 function imageController($scope, $route, $routeParams, $location, Toma){
@@ -77,5 +86,14 @@ function Memize($scope){
     console.log($scope.imageUrl + ' ' + $scope.firstLine + ' ' + $scope.secondLine);
   };
 }
+
+
+/* Stuff that I don't really know how to... angularize or summin...
+ * pls help */
+
+
+
+
+
 
 

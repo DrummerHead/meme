@@ -242,8 +242,38 @@ button[disabled]:focus,
   color: white;
   background-color: #2ba6cb;
 }
+
+
+
+
+
+
 /* End Modular */
 
+
+
+
+/*
+ * Subscriptions
+ * - - - - - - - */
+
+[role="main"],
+#meme-area {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header:before,
+header:after {
+  content: '';
+  display: table;
+}
+header:after {
+  clear: both;
+}
+
+/* End Subscriptions */
 
 
 
@@ -252,8 +282,50 @@ button[disabled]:focus,
  * - - - - - - - */
 
 [role='main'] {
-  padding: 1em;
+  padding: 16px;
 }
+
+#meme-area {
+  padding: 1em 0;
+}
+#meme-frame {
+  position: relative;
+  height: 100%;
+  font-size: 2.2em;
+  line-height: 1;
+  font-family: Impact, sans-serif;
+  color: #fff;
+  text-shadow:  2px  2px 0 #000,
+               -2px  2px 0 #000,
+                2px -2px 0 #000,
+               -2px -2px 0 #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#meme-frame img {
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+}
+#first-line,
+#second-line {
+  width: 98%;
+  padding: 1%;
+  position: absolute;
+  left: 0;
+  margin: 0;
+  text-align: center;
+}
+#first-line {
+  top: 0;
+}
+#second-line {
+  bottom: 0;
+}
+
+
+
+
 
 /* End Persistent */
 
@@ -263,6 +335,27 @@ button[disabled]:focus,
 /*
  * Specific page: Landing / Creation page
  * - - - - - - - */
+
+header {
+  height: 32px;
+}
+header input[type="url"],
+header input[type="text"] {
+  float: left;
+  width: 32.53333333333333%;
+  margin: 0 1.2% 0 0;
+}
+header input:last-child {
+  margin-right: 0;
+}
+#share {
+  height: 44px;
+}
+#share button {
+  margin-bottom: 0;
+}
+#share input {
+}
 
 /* End Specific page: Landing / Creation page */
 
