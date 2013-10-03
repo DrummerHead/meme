@@ -1,5 +1,9 @@
 'use strict';
 
+
+/* App module
+ * ========================================= */
+
 var ngMeme = angular.module('ngMeme', [])
 
 ngMeme.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
@@ -16,28 +20,16 @@ ngMeme.config(['$routeProvider', '$locationProvider', function($routeProvider, $
     });
   }]);
 
-ngMeme.factory('Toma', function(){
-  var memeData = {};
-
-  return {
-    getMemeData : function(){
-      console.log(memeData);
-      return memeData;
-    },
-    setMemeData : function(data){
-      memeData = data;
-      console.log(memeData);
-    }
-  }
-})
-
 var localhost = true;
 var docRoot = (localhost ? 'http://localhost:8080/#/' : 'http://mcdlr.com/lalalele')
 
-function urlfy(input){
-  return input.replace(/ /g, '-');
-}
+/* End App module */
 
+
+
+
+/* Controllers
+ * ========================================= */
 
 function mainController($scope, $route, $routeParams, $location, Toma){
   $scope.$route = $route;
@@ -80,20 +72,51 @@ function imageController($scope, $route, $routeParams, $location, Toma){
   Toma.setMemeData(dataMagica)
 }
 
-function Memize($scope){
-  $scope.createLink = function(){
-    console.log('does');
-    console.log($scope.imageUrl + ' ' + $scope.firstLine + ' ' + $scope.secondLine);
-  };
-}
-
-
-/* Stuff that I don't really know how to... angularize or summin...
- * pls help */
+/* End Controllers */
 
 
 
 
+/* Directives
+ * ========================================= */
+
+/* End Directives */
 
 
 
+
+/* Filters
+ * ========================================= */
+
+/* End Filters */
+
+
+
+
+/* Services
+ * ========================================= */
+
+ngMeme.factory('Toma', function(){
+  var memeData = {};
+
+  return {
+    getMemeData : function(){
+      console.log(memeData);
+      return memeData;
+    },
+    setMemeData : function(data){
+      memeData = data;
+      console.log(memeData);
+    }
+  }
+})
+
+/* End Services */
+
+
+
+
+/* x
+ * ========================================= */
+
+/* End x */
