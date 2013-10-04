@@ -49,12 +49,16 @@ function rootController($scope, $route, $routeParams, $location, Toma){
   $scope.createLink = function(){
     $scope.lincoln = docRoot + 'img?url=' + encodeURIComponent($scope.imageUrl) + '&fl=' + encodeURIComponent($scope.firstLine) + '&sl=' + encodeURIComponent($scope.secondLine)
   };
+
   var lasCosas = Toma.getMemeData();
 
   $scope.imageUrl = lasCosas.imageUrl;
   $scope.firstLine = lasCosas.firstLine;
   $scope.secondLine = lasCosas.secondLine;
 
+  $scope.autoSelect = function($event){
+    $event.currentTarget.select();
+  }
 }
 
 function imageController($scope, $route, $routeParams, $location, Toma){

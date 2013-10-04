@@ -7,7 +7,11 @@
 <div id='meme-area' ng-include='"/partials/meme-area.html"' ng-style='memeAreaHeight()'>
 </div>
 
-<form id='share'>
-  <button ng-click='createLink()'>Share this meme!</button>
-  <input type='text' ng-model='lincoln' ng-show='lincoln'>
+<form id='actions'>
+  <div class='share-trigger'>
+    <button ng-click='createLink()'>Share this meme!</button>
+  </div>
+  <div class='share-field'>
+    <input type='text' ng-model='lincoln' ng-show='lincoln' ng-click='autoSelect($event)'>
+  </div>
 </form>

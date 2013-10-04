@@ -84,7 +84,6 @@ textarea {
   height: 2.3125em;
   padding: 0.5em;
   border: 1px solid #ccc;
-  margin: 0 0 1em 0;
   font-size: 0.875em;
   font-family: inherit;
   background-color: #fff;
@@ -265,11 +264,14 @@ button[disabled]:focus,
 }
 
 header:before,
-header:after {
+header:after,
+.share:before,
+.share:after {
   content: '';
   display: table;
 }
-header:after {
+header:after,
+.share:after {
   clear: both;
 }
 
@@ -348,13 +350,32 @@ header input[type="text"] {
 header input:last-child {
   margin-right: 0;
 }
-#share {
+#actions,
+.share-trigger,
+.share-field {
   height: 44px;
 }
-#share button {
+#actions button,
+#actions .button {
   margin-bottom: 0;
 }
-#share input {
+#actions .button + .button,
+#actions button + button {
+  margin-left: .6em;
+}
+.share-trigger {
+  width: 11.5em;
+  float: left;
+}
+.share-trigger button {
+  width: 100%;
+}
+.share-field {
+  margin: 0 0 0 12.7em;
+}
+.share-field input {
+  height: 100%;
+  font-size: 1em;
 }
 
 /* End Specific page: Landing / Creation page */
