@@ -40,7 +40,6 @@ function mainController($scope, $route, $routeParams, $location, Toma){
     var windowHeight = window.innerHeight;
     var memeChrome = 108;
     var areaHeight = (windowHeight - memeChrome) + 'px';
-    console.log(areaHeight);
     return {'height' : areaHeight};
   }
 }
@@ -59,6 +58,10 @@ function rootController($scope, $route, $routeParams, $location, Toma){
   $scope.autoSelect = function($event){
     $event.currentTarget.select();
   }
+
+  $scope.imageWidth = {
+    'width' : 'auto'
+  };
 }
 
 function imageController($scope, $route, $routeParams, $location, Toma){
@@ -84,6 +87,17 @@ function imageController($scope, $route, $routeParams, $location, Toma){
 /* Directives
  * ========================================= */
 
+ngMeme.directive('cradle', function(){
+  return function(scope, element, attrs){
+    element.bind('load', function(e){
+      scope.imageWidth = {
+        'width' : element[0].width + 'px'
+      };
+      scope.$apply();
+    });
+  }
+});
+
 /* End Directives */
 
 
@@ -101,16 +115,18 @@ function imageController($scope, $route, $routeParams, $location, Toma){
  * ========================================= */
 
 ngMeme.factory('Toma', function(){
-  var memeData = {};
+  var memeData = {
+    'imageUrl' : '',
+    'firstLine' : '',
+    'secondLine' : ''
+  };
 
   return {
     getMemeData : function(){
-      console.log(memeData);
       return memeData;
     },
     setMemeData : function(data){
       memeData = data;
-      console.log(memeData);
     }
   }
 })

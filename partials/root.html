@@ -9,7 +9,7 @@
 
 <form id='actions'>
   <div class='share-trigger'>
-    <button ng-click='createLink()'>Share this meme!</button>
+    <button ng-click='createLink()' ng-disabled='!imageUrl'>Share this meme!</button>
   </div>
   <div class='share-field'>
     <input type='text' ng-model='lincoln' ng-show='lincoln' ng-click='autoSelect($event)'>

@@ -293,6 +293,7 @@ header:after,
 #meme-frame {
   position: relative;
   height: 100%;
+  margin: 0 auto;
   font-size: 2.2em;
   line-height: 1;
   font-family: Impact, sans-serif;
@@ -304,7 +305,7 @@ header:after,
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-#meme-frame img {
+#meme {
   display: block;
   height: 100%;
   margin: 0 auto;
@@ -369,6 +370,17 @@ header input:last-child {
 }
 .share-trigger button {
   width: 100%;
+}
+.share-trigger button[disabled]:after {
+  content: "Supply a valid image url to share";
+  width: 17em;
+  line-height: 2;
+  position: absolute;
+  right: -18em;
+  top: .4em;
+  text-align: center;
+  background-color: #ef0;
+  color: #444;
 }
 .share-field {
   margin: 0 0 0 12.7em;
