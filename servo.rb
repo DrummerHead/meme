@@ -6,4 +6,8 @@ local_magia = HTTPServer.new(
   :DocumentRoot => "."
 )
 
+trap("INT") {
+  local_magia.shutdown
+}
+
 local_magia.start
