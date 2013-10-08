@@ -35,17 +35,24 @@ function mainController($scope, $route, $routeParams, $location, Toma){
   $scope.$routeParams = $routeParams;
   $scope.docRoot = window.location.origin + '/meme/#/';
 
-  $scope.memeAreaHeight = function (){
+  $scope.memeAreaHeight = function(){
     var windowHeight = window.innerHeight;
     var memeChrome = 108;
     var areaHeight = (windowHeight - memeChrome) + 'px';
     return {'height' : areaHeight};
   }
+
+  $scope.utf8ToBase64 = function(str){
+    return window.btoa(unescape(encodeURIComponent(str)));
+  }
+  $scope.b64ToUtf8 = function(str){
+    return decodeURIComponent(escape(window.atob(str)));
+  }
 }
 
 function rootController($scope, $route, $routeParams, $location, Toma){
   $scope.createLink = function(){
-    $scope.lincoln = $scope.docRoot + 'img?url=' + encodeURIComponent($scope.imageUrl) + '&fl=' + encodeURIComponent($scope.firstLine) + '&sl=' + encodeURIComponent($scope.secondLine)
+    $scope.lincoln = $scope.docRoot + 'img?url=' + $scope.utf8ToBase64($scope.imageUrl) + '&fl=' + $scope.utf8ToBase64($scope.firstLine) + '&sl=' + $scope.utf8ToBase64($scope.secondLine)
   };
 
   var lasCosas = Toma.getMemeData();
@@ -64,14 +71,14 @@ function rootController($scope, $route, $routeParams, $location, Toma){
 }
 
 function imageController($scope, $route, $routeParams, $location, Toma){
-  $scope.imageUrl = $routeParams.url;
-  $scope.firstLine = $routeParams.fl;
-  $scope.secondLine = $routeParams.sl;
+  $scope.imageUrl = $scope.b64ToUtf8($routeParams.url);
+  $scope.firstLine = $scope.b64ToUtf8($routeParams.fl);
+  $scope.secondLine = $scope.b64ToUtf8($routeParams.sl);
 
   var dataMagica = {
-    'imageUrl' : $routeParams.url,
-    'firstLine' : $routeParams.fl,
-    'secondLine' : $routeParams.sl
+    'imageUrl' : $scope.imageUrl,
+    'firstLine' : $scope.firstLine,
+    'secondLine' : $scope.secondLine
   };
 
   Toma.setMemeData(dataMagica)
