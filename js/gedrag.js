@@ -4,24 +4,24 @@
 /* App module
  * ========================================= */
 
+var docRoot = window.location.origin + '/meme/#/';
+
 var ngMeme = angular.module('ngMeme', [])
 
 ngMeme.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
     $routeProvider.when('/', {
-      templateUrl: '/partials/root.html',
+      templateUrl: 'partials/root.html',
       controller: rootController
     });
-    $routeProvider.when('/:img', {
-      templateUrl: '/partials/image.html',
+    $routeProvider.when('/img:params', {
+      templateUrl: 'partials/image.html',
       controller: imageController
     });
-    $routeProvider.otherwise({ // Quite useless, I'll leave it for reference
+    $routeProvider.otherwise({
       redirectTo: '/'
     });
   }]);
 
-var localhost = true;
-var docRoot = (localhost ? 'http://localhost:8080/#/' : 'http://mcdlr.com/lalalele')
 
 /* End App module */
 
@@ -65,7 +65,6 @@ function rootController($scope, $route, $routeParams, $location, Toma){
 }
 
 function imageController($scope, $route, $routeParams, $location, Toma){
-  //$scope.sicodelia = Toma.getCoso();
   $scope.imageUrl = $routeParams.url;
   $scope.firstLine = $routeParams.fl;
   $scope.secondLine = $routeParams.sl;
