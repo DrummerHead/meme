@@ -4,8 +4,6 @@
 /* App module
  * ========================================= */
 
-var docRoot = window.location.origin + '/meme/#/';
-
 var ngMeme = angular.module('ngMeme', [])
 
 ngMeme.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
@@ -35,6 +33,7 @@ function mainController($scope, $route, $routeParams, $location, Toma){
   $scope.$route = $route;
   $scope.$location = $location;
   $scope.$routeParams = $routeParams;
+  $scope.docRoot = window.location.origin + '/meme/#/';
 
   $scope.memeAreaHeight = function (){
     var windowHeight = window.innerHeight;
@@ -46,7 +45,7 @@ function mainController($scope, $route, $routeParams, $location, Toma){
 
 function rootController($scope, $route, $routeParams, $location, Toma){
   $scope.createLink = function(){
-    $scope.lincoln = docRoot + 'img?url=' + encodeURIComponent($scope.imageUrl) + '&fl=' + encodeURIComponent($scope.firstLine) + '&sl=' + encodeURIComponent($scope.secondLine)
+    $scope.lincoln = $scope.docRoot + 'img?url=' + encodeURIComponent($scope.imageUrl) + '&fl=' + encodeURIComponent($scope.firstLine) + '&sl=' + encodeURIComponent($scope.secondLine)
   };
 
   var lasCosas = Toma.getMemeData();
