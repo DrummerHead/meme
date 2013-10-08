@@ -4,4 +4,8 @@ Accessible and reusable way to create memes. Text overlay, modifiable, shareable
 
 Work in progress. Test project for AngularJS.
 
-Run simple localhost server with `ruby servo.rb` then go to `http://localhost:8080/#/`
+# Running
+
+Run simple localhost server with `ruby servo.rb`
+
+Then go to `http://localhost:8080/meme/#/`
