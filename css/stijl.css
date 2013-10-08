@@ -294,21 +294,12 @@ header:after,
   position: relative;
   height: 100%;
   margin: 0 auto;
-  font-size: 2.2em;
-  line-height: 1;
-  font-family: Impact, sans-serif;
-  color: #fff;
-  text-shadow:  2px  2px 0 #000,
-               -2px  2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 #meme {
   display: block;
   height: 100%;
   margin: 0 auto;
+  color: #222;
 }
 #first-line,
 #second-line {
@@ -317,7 +308,29 @@ header:after,
   position: absolute;
   left: 0;
   margin: 0;
+  font-size: 2.2em;
+  line-height: 1;
+  letter-spacing: 1px;
   text-align: center;
+  font-family: Impact, sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:  0   -2px 0 #000,
+                1px -2px 0 #000,
+                2px -2px 0 #000,
+                2px -1px 0 #000,
+                2px  0   0 #000,
+                2px  1px 0 #000,
+                2px  2px 0 #000,
+                1px  2px 0 #000,
+                0    2px 0 #000,
+               -1px  2px 0 #000,
+               -2px  2px 0 #000,
+               -2px  1px 0 #000,
+               -2px  0   0 #000,
+               -2px -1px 0 #000,
+               -2px -2px 0 #000,
+               -1px -2px 0 #000;
 }
 #first-line {
   top: 0;
