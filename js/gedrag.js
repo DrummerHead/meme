@@ -42,7 +42,7 @@ function mainController($scope, $route, $routeParams, $location, Toma){
   }
 
   $scope.utf8ToBase64 = function(str){
-    return window.btoa(unescape(encodeURIComponent(str)));
+    return window.btoa(unescape(encodeURIComponent(str))).replace(/=+$/, '');
   }
   $scope.b64ToUtf8 = function(str){
     return decodeURIComponent(escape(window.atob(str)));
