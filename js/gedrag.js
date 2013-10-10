@@ -35,10 +35,9 @@ function mainController($scope, $route, $routeParams, $location, Toma){
   $scope.$routeParams = $routeParams;
   $scope.docRoot = window.location.origin + '/meme/#/';
 
-  $scope.memeAreaHeight = function(){
+  $scope.memeAreaHeight = function(chromeHeight){
     var windowHeight = window.innerHeight;
-    var memeChrome = 108;
-    var areaHeight = (windowHeight - memeChrome) + 'px';
+    var areaHeight = (windowHeight - chromeHeight) + 'px';
     return {'height' : areaHeight};
   }
 

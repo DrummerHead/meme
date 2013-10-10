@@ -288,7 +288,6 @@ header:after,
 }
 
 #meme-area {
-  padding: 1em 0;
 }
 #meme-frame {
   position: relative;
@@ -354,6 +353,7 @@ header:after,
 
 header {
   height: 32px;
+  padding: 0 0 16px 0;
 }
 header input[type="url"],
 header input[type="text"] {
@@ -363,6 +363,9 @@ header input[type="text"] {
 }
 header input:last-child {
   margin-right: 0;
+}
+#actions {
+  padding: 16px 0 0 0;
 }
 #actions,
 .share-trigger,
