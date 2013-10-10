@@ -22,6 +22,48 @@
     window.angular || document.write("<script src='/meme/js/vendor/angular.min.js'><\/script>");
   </script>
   <script src='/meme/js/gedrag.js'></script>
+
+  <script type='text/ng-template' id='partials/root.html'>
+    <header role='banner'>
+      <input type='url' placeholder='image url' ng-model='imageUrl'>
+      <input type='text' placeholder='first line' ng-model='firstLine'>
+      <input type='text' placeholder='second line' ng-model='secondLine'>
+    </header>
+
+    <div id='meme-area' ng-include='"partials/meme-area.html"' ng-style='memeAreaHeight(32 + 48 + 60)'>
+    </div>
+
+    <form id='actions'>
+      <div class='share-trigger'>
+        <button ng-click='createLink()' ng-disabled='!imageUrl'>Share this meme!</button>
+      </div>
+      <div class='share-field'>
+        <input type='text' ng-model='lincoln' ng-show='lincoln' ng-click='autoSelect($event)'>
+      </div>
+    </form>
+  </script>
+
+  <script type='text/ng-template' id='partials/image.html'>
+    <div id='meme-area' ng-include='"partials/meme-area.html"' ng-style='memeAreaHeight(32 + 60)'>
+    </div>
+
+    <form id='actions'>
+      <a href='/meme/#/' class='button'>Remix!</a>
+      <a href='/meme/' class='button'>Create your own!</a>
+    </form>
+  </script>
+
+  <script type='text/ng-template' id='partials/meme-area.html'>
+    <div id='meme-frame' ng-style='imageWidth'>
+      <img id='meme' ng-src='{{imageUrl}}' cradle alt='{{firstLine}} {{secondLine}}'>
+      <p id='first-line'>
+        {{firstLine}}
+      </p>
+      <p id='second-line'>
+        {{secondLine}}
+      </p>
+    </div>
+  </script>
 </div>
 
 </body>
