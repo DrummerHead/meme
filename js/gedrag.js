@@ -94,8 +94,11 @@ function imageController($scope, $route, $routeParams, $location, Toma){
 ngMeme.directive('cradle', function(){
   return function(scope, element, attrs){
     element.bind('load', function(e){
+      var width = element[0].width;
+      var ems = width / 677;
       scope.imageWidth = {
-        'width' : element[0].width + 'px'
+        'width' : width + 'px',
+        'font-size' : ems + 'em'
       };
       scope.$apply();
     });
