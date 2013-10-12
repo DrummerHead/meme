@@ -311,7 +311,7 @@ header:after,
   line-height: 1;
   letter-spacing: 1px;
   text-align: center;
-  font-family: Impact, sans-serif;
+  font-family: Impact, HelveticaNeue-CondensedBlack, Futura-CondensedExtraBold, sans-serif;
   text-transform: uppercase;
   color: #fff;
   text-shadow:  0     -.050em 0 #000,
