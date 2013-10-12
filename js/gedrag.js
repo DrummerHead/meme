@@ -51,7 +51,10 @@ function mainController($scope, $route, $routeParams, $location, Toma){
 
 function rootController($scope, $route, $routeParams, $location, Toma){
   $scope.createLink = function(){
-    $scope.lincoln = $scope.docRoot + 'img?url=' + $scope.utf8ToBase64($scope.imageUrl) + '&fl=' + $scope.utf8ToBase64($scope.firstLine) + '&sl=' + $scope.utf8ToBase64($scope.secondLine)
+    $scope.lincoln = $scope.docRoot + 'img?url=' + $scope.utf8ToBase64($scope.imageUrl) + '&fl=' + $scope.utf8ToBase64($scope.firstLine) + '&sl=' + $scope.utf8ToBase64($scope.secondLine);
+    setTimeout(function(){
+      document.querySelector('.share-field input').select();
+    }, 100);
   };
 
   var lasCosas = Toma.getMemeData();
@@ -61,7 +64,7 @@ function rootController($scope, $route, $routeParams, $location, Toma){
   $scope.secondLine = lasCosas.secondLine;
 
   $scope.autoSelect = function($event){
-    $event.currentTarget.select();
+    $event.currentTarget.setSelectionRange(0,7777777);
   }
 
   $scope.imageWidth = {
