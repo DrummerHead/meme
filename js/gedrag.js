@@ -99,11 +99,12 @@ ngMeme.directive('cradle', function(){
     element.bind('load', function(e){
       var width = element[0].width;
       var ems = width / 677;
-      scope.imageWidth = {
-        'width' : width + 'px',
-        'font-size' : ems + 'em'
-      };
-      scope.$apply();
+      scope.$apply(function(scope){
+        scope.imageWidth = {
+          'width' : width + 'px',
+          'font-size' : ems + 'em'
+        };
+      });
     });
   }
 });
