@@ -29,7 +29,7 @@ ngMeme.config(['$routeProvider', '$locationProvider', function($routeProvider, $
 /* Controllers
  * ========================================= */
 
-function mainController($scope, $route, $routeParams, $location, Toma){
+function mainController($scope, $route, $routeParams, $location, MemeData){
   $scope.$route = $route;
   $scope.$location = $location;
   $scope.$routeParams = $routeParams;
@@ -49,7 +49,7 @@ function mainController($scope, $route, $routeParams, $location, Toma){
   }
 }
 
-function rootController($scope, $route, $routeParams, $location, Toma){
+function rootController($scope, $route, $routeParams, $location, MemeData){
   $scope.createLink = function(){
     $scope.lincoln = $scope.docRoot + 'img?url=' + $scope.utf8ToBase64($scope.imageUrl) + '&fl=' + $scope.utf8ToBase64($scope.firstLine) + '&sl=' + $scope.utf8ToBase64($scope.secondLine);
     setTimeout(function(){
@@ -57,33 +57,32 @@ function rootController($scope, $route, $routeParams, $location, Toma){
     }, 100);
   };
 
-  var lasCosas = Toma.getMemeData();
-
-  $scope.imageUrl = lasCosas.imageUrl;
-  $scope.firstLine = lasCosas.firstLine;
-  $scope.secondLine = lasCosas.secondLine;
+  var memeData = MemeData.getMemeData();
+  $scope.imageUrl = memeData.imageUrl;
+  $scope.firstLine = memeData.firstLine;
+  $scope.secondLine = memeData.secondLine;
 
   $scope.autoSelect = function($event){
     $event.currentTarget.setSelectionRange(0,7777777);
   }
 
-  $scope.imageWidth = {
+  $scope.frameStyle = {
     'width' : 'auto'
   };
 }
 
-function imageController($scope, $route, $routeParams, $location, Toma){
+function imageController($scope, $route, $routeParams, $location, MemeData){
   $scope.imageUrl = $scope.b64ToUtf8($routeParams.url);
   $scope.firstLine = $scope.b64ToUtf8($routeParams.fl);
   $scope.secondLine = $scope.b64ToUtf8($routeParams.sl);
 
-  var dataMagica = {
+  var memeData = {
     'imageUrl' : $scope.imageUrl,
     'firstLine' : $scope.firstLine,
     'secondLine' : $scope.secondLine
   };
 
-  Toma.setMemeData(dataMagica)
+  MemeData.setMemeData(memeData)
 }
 
 /* End Controllers */
@@ -100,7 +99,7 @@ ngMeme.directive('cradle', function(){
       var width = element[0].width;
       var ems = width / 677;
       scope.$apply(function(scope){
-        scope.imageWidth = {
+        scope.frameStyle = {
           'width' : width + 'px',
           'font-size' : ems + 'em'
         };
@@ -125,7 +124,7 @@ ngMeme.directive('cradle', function(){
 /* Services
  * ========================================= */
 
-ngMeme.factory('Toma', function(){
+ngMeme.factory('MemeData', function(){
   var memeData = {
     'imageUrl' : '',
     'firstLine' : '',
