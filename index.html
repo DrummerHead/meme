@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app='ngMeme'>
+<html data-ng-app='ngMeme'>
 <head>
 <title>Meme in text</title>
 
@@ -11,9 +11,9 @@
 <link rel='stylesheet' href='/meme/css/stijl.css'>
 
 </head>
-<body ng-controller='mainController'>
+<body data-ng-controller='mainController'>
 
-<main role='main' ng-view>
+<main role='main' data-ng-view>
 </main>
 
 <div id='moribus'>
@@ -25,26 +25,26 @@
 
   <script type='text/ng-template' id='partials/root.html'>
     <header role='banner'>
-      <input type='url' placeholder='image url' ng-model='imageUrl'>
-      <input type='text' placeholder='first line' ng-model='firstLine'>
-      <input type='text' placeholder='second line' ng-model='secondLine'>
+      <input type='url' placeholder='image url' data-ng-model='imageUrl'>
+      <input type='text' placeholder='first line' data-ng-model='firstLine'>
+      <input type='text' placeholder='second line' data-ng-model='secondLine'>
     </header>
 
-    <div id='meme-area' ng-include='"partials/meme-area.html"' ng-style='memeAreaHeight(32 + 48 + 60)'>
+    <div id='meme-area' data-ng-include='"partials/meme-area.html"' data-ng-style='memeAreaHeight(32 + 48 + 60)'>
     </div>
 
     <form id='actions'>
       <div class='share-trigger'>
-        <button ng-click='createLink()' ng-disabled='!imageUrl'>Share this meme!</button>
+        <button data-ng-click='createLink()' data-ng-disabled='!imageUrl'>Share this meme!</button>
       </div>
       <div class='share-field'>
-        <input type='text' ng-model='lincoln' ng-show='lincoln' ng-click='autoSelect($event)'>
+        <input type='text' data-ng-model='lincoln' data-ng-show='lincoln' data-ng-click='autoSelect($event)'>
       </div>
     </form>
   </script>
 
   <script type='text/ng-template' id='partials/image.html'>
-    <div id='meme-area' ng-include='"partials/meme-area.html"' ng-style='memeAreaHeight(32 + 60)'>
+    <div id='meme-area' data-ng-include='"partials/meme-area.html"' data-ng-style='memeAreaHeight(32 + 60)'>
     </div>
 
     <form id='actions'>
@@ -54,8 +54,8 @@
   </script>
 
   <script type='text/ng-template' id='partials/meme-area.html'>
-    <div id='meme-frame' ng-style='imageWidth'>
-      <img id='meme' ng-src='{{imageUrl}}' cradle alt='{{firstLine}} {{secondLine}}'>
+    <div id='meme-frame' data-ng-style='imageWidth'>
+      <img id='meme' data-ng-src='{{imageUrl}}' cradle alt='{{firstLine}} {{secondLine}}'>
       <p id='first-line'>
         {{firstLine}}
       </p>
