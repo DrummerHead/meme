@@ -31,7 +31,7 @@
       <input type='text' placeholder='second line' data-ng-model='secondLine'>
     </header>
 
-    <div id='meme-area' data-ng-include='"partials/meme-area.html"' data-ng-style='memeAreaHeight(32 + 48 + 60)'>
+    <div id='meme-area' data-ng-include='"partials/meme-area.html"' data-ng-style='memeAreaHeight()'>
     </div>
 
     <form id='actions'>
@@ -45,7 +45,7 @@
   </script>
 
   <script type='text/ng-template' id='partials/image.html'>
-    <div id='meme-area' data-ng-include='"partials/meme-area.html"' data-ng-style='memeAreaHeight(32 + 60)'>
+    <div id='meme-area' data-ng-include='"partials/meme-area.html"' data-ng-style='memeAreaHeight()'>
     </div>
 
     <form id='actions'>
@@ -55,7 +55,7 @@
   </script>
 
   <script type='text/ng-template' id='partials/meme-area.html'>
-    <div id='meme-frame' data-ng-style='frameStyle'>
+    <div id='meme-frame' data-ng-style='frameStyle()'>
       <img id='meme' data-ng-src='{{imageUrl}}' cradle alt='{{firstLine}} {{secondLine}}'>
       <p id='first-line'>
         {{firstLine}}
