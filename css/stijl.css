@@ -16,14 +16,8 @@ body {
   background-color: #222;
   color: #eee;
 }
-article, aside, details, figcaption, figure,
-footer, header, hgroup, main, nav, section, summary {
+header, main {
   display: block;
-}
-audio,
-canvas,
-video {
-  display: inline-block;
 }
 a {
   background: transparent;
@@ -35,30 +29,17 @@ a:active,
 a:hover {
   outline: 0;
 }
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-b,
-strong {
-  font-weight: bold;
-}
 img {
   display: block;
   max-width: 100%;
   border: 0;
 }
 button,
-input,
-select,
-textarea {
+input {
   font-family: inherit;
   font-size: 100%;
-  margin: 0;
-}
-button,
-input {
   line-height: normal;
+  margin: 0;
 }
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -66,19 +47,7 @@ input::-moz-focus-inner {
   padding: 0;
 }
 input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="week"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-textarea {
+input[type="url"] {
   display: block;
   width: 100%;
   height: 2.3125em;
@@ -101,67 +70,21 @@ textarea {
           transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
 }
 input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="date"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="time"]:focus,
-input[type="url"]:focus,
-textarea:focus {
+input[type="url"]:focus {
   -webkit-box-shadow: 0 0 5px #999999;
      -moz-box-shadow: 0 0 5px #999999;
           box-shadow: 0 0 5px #999999;
   border-color: #999999;
 }
 input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="date"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="time"]:focus,
-input[type="url"]:focus,
-textarea:focus {
+input[type="url"]:focus {
   background: #fafafa;
   border-color: #999999;
   outline: none;
 }
 input[type="text"][disabled],
-input[type="password"][disabled],
-input[type="date"][disabled],
-input[type="datetime"][disabled],
-input[type="datetime-local"][disabled],
-input[type="month"][disabled],
-input[type="week"][disabled],
-input[type="email"][disabled],
-input[type="number"][disabled],
-input[type="search"][disabled],
-input[type="tel"][disabled],
-input[type="time"][disabled],
-input[type="url"][disabled],
-textarea[disabled] {
+input[type="url"][disabled] {
   background-color: #dddddd;
-}
-input[type="file"],
-input[type="checkbox"],
-input[type="radio"],
-select {
-  margin: 0 0 1em 0;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
 }
 /* End Baseline */
 
@@ -177,8 +100,8 @@ button,
   display: inline-block;
   position: relative;
   padding: .8125em 1.5em .75em 1.5em;
+  margin: 0;
   border: 1px solid #2284a1;
-  margin: 0 0 1.25em;
   font-size: 1em;
   line-height: normal;
   text-align: center;
@@ -196,21 +119,6 @@ button:focus,
 .button:focus {
   background-color: #2284a1;
   color: white;
-}
-button.large,
-.button.large {
-  padding: 1.03125em 2em 1.03125em 2em;
-  font-size: 1.25em;
-}
-button.small,
-.button.small {
-  padding: .625em 1.125em .5625em 1.125em;
-  font-size: .8125em;
-}
-button.tiny,
-.button.tiny {
-  padding: .5em .875em .4375em .875em;
-  font-size: .6875em;
 }
 button.expand,
 .button.expand {
@@ -241,12 +149,6 @@ button[disabled]:focus,
   color: white;
   background-color: #2ba6cb;
 }
-
-
-
-
-
-
 /* End Modular */
 
 
@@ -274,7 +176,6 @@ header:after,
 .share:after {
   clear: both;
 }
-
 /* End Subscriptions */
 
 
@@ -285,9 +186,6 @@ header:after,
 
 [role='main'] {
   padding: 16px;
-}
-
-#meme-area {
 }
 #meme-frame {
   position: relative;
@@ -339,11 +237,6 @@ header:after,
 #second-line {
   bottom: 0;
 }
-
-
-
-
-
 /* End Persistent */
 
 
@@ -374,10 +267,6 @@ header input:last-child {
 .share-field {
   height: 44px;
 }
-#actions button,
-#actions .button {
-  margin-bottom: 0;
-}
 #actions .button + .button,
 #actions button + button {
   margin-left: .6em;
@@ -407,26 +296,7 @@ header input:last-child {
   height: 100%;
   font-size: 1em;
 }
-
 /* End Specific page: Landing / Creation page */
-
-
-
-
-/*
- * Specific page: Showing created Meme
- * - - - - - - - */
-
-/* End Specific page: Showing created Meme */
-
-
-
-
-/*
- * Specific page: x
- * - - - - - - - */
-
-/* End Specific page: x */
 
 
 
@@ -436,34 +306,3 @@ header input:last-child {
  * - - - - - - - */
 
 /* End Media Queries */
-
-
-
-
-/*
- * Print
- * - - - - - - - */
-
-/* End Print */
-
-
-
-
-
-
-
-
-
-
-
-/*
- * x
- * - - - - - - - */
-
-/* End x */
-
-/*
- * Specific page: x
- * - - - - - - - */
-
-/* End Specific page: x */
