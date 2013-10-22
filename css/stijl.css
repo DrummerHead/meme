@@ -210,7 +210,15 @@ header:after,
   line-height: 1;
   letter-spacing: 1px;
   text-align: center;
-  font-family: Impact, HelveticaNeue-CondensedBlack, Futura-CondensedExtraBold, sans-serif;
+  font-family: Impact,
+               HelveticaNeue-CondensedBlack,
+               Futura-CondensedExtraBold,
+               Nimbus Sans L,
+               Garuda,
+               FreeSans,
+               sans-serif;
+  font-weight: bold;
+  font-stretch: condensed;
   text-transform: uppercase;
   word-wrap: break-word;
   color: #fff;
