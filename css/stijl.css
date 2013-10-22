@@ -305,4 +305,15 @@ header input:last-child {
  * Media Queries
  * - - - - - - - */
 
+@media (max-width: 480px){
+  #meme-frame {
+    font-size: .67776em !important;
+  }
+}
+@media (max-width: 347px){
+  #actions button,
+  #actions .button {
+    font-size: .95em;
+  }
+}
 /* End Media Queries */
