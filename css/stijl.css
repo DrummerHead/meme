@@ -293,6 +293,7 @@ header:after,
   position: relative;
   height: 100%;
   margin: 0 auto;
+  overflow: hidden;
 }
 #meme {
   display: block;
@@ -313,6 +314,7 @@ header:after,
   text-align: center;
   font-family: Impact, HelveticaNeue-CondensedBlack, Futura-CondensedExtraBold, sans-serif;
   text-transform: uppercase;
+  word-wrap: break-word;
   color: #fff;
   text-shadow:  0     -.050em 0 #000,
                .025em -.050em 0 #000,
