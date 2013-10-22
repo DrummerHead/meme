@@ -47,14 +47,14 @@ function mainController($scope, $route, $routeParams, $location, MemeData){
       return {
         'width' : availableHorizontalSpace + 'px',
         'height' : availableHorizontalSpace * $scope.imageRatio + 'px',
-        'font-size' : (availableHorizontalSpace / 677) + 'em'
+        'font-size' : (availableHorizontalSpace / 577) + 'em'
       }
     }
     else {
       return {
         'width' : calculatedWidth + 'px',
         'height' : $scope.areaHeight + 'px',
-        'font-size' : (calculatedWidth / 677) + 'em'
+        'font-size' : (calculatedWidth / 577) + 'em'
       }
     }
   }

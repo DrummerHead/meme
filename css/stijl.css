@@ -159,7 +159,9 @@ button[disabled]:focus,
  * - - - - - - - */
 
 [role="main"],
-#meme-area {
+#meme-area,
+#first-line,
+#second-line {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -201,13 +203,13 @@ header:after,
 }
 #first-line,
 #second-line {
-  width: 98%;
-  padding: 1%;
+  width: 100%;
+  padding: .5em;
   position: absolute;
   left: 0;
   margin: 0;
   font-size: 2em;
-  line-height: 1;
+  line-height: 1.07;
   letter-spacing: 1px;
   text-align: center;
   font-family: Impact,
